@@ -1,0 +1,285 @@
+:root {
+    --brand-red: #A53B47;
+    --brand-gold: #D4AF37;
+    --text-dark: #333333;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling for all sections */
+section {
+    will-change: transform;
+}
+
+#home {
+    will-change: transform;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth navigation */
+nav {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.text-brand-red { color: var(--brand-red); }
+.bg-brand-red { background-color: var(--brand-red); }
+.text-brand-gold { color: var(--brand-gold); }
+.bg-brand-gold { background-color: var(--brand-gold); }
+.text-custom-dark { color: var(--text-dark); }
+.bg-custom-dark { background-color: var(--text-dark); }
+.border-brand-red { border-color: var(--brand-red); }
+.hover-brand-gold:hover { color: var(--brand-gold); }
+
+.hero-gradient {
+    background: linear-gradient(135deg, rgba(165, 59, 71, 0.85) 0%, rgba(139, 75, 92, 0.75) 100%);
+}
+
+.btn-primary {
+    background-color: var(--brand-red);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background-color;
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background-color;
+}
+
+.btn-outline:hover {
+    background-color: var(--brand-gold);
+    color: var(--text-dark);
+    border-color: var(--brand-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.portfolio-item {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Instagram gradient colors */
+.instagram-icon {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.instagram-bg {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.instagram-bg:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    opacity: 0.9;
+}
+
+/* LinkedIn official color */
+.linkedin-bg {
+    background-color: #0A66C2;
+}
+
+.linkedin-bg:hover {
+    background-color: #004182;
+}
+
+/* YouTube official color */
+.youtube-bg {
+    background-color: #FF0000;
+}
+
+.youtube-bg:hover {
+    background-color: #CC0000;
+}
+
+/* Perfect circle icons */
+.icon-circle {
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.icon-circle:hover {
+    transform: scale(1.1);
+}
+
+/* Smooth links and buttons */
+a, button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth images */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Portfolio filter buttons */
+.portfolio-filter {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background-color;
+}
+
+.portfolio-filter:hover {
+    transform: translateY(-2px);
+}
+
+/* Form inputs */
+input, textarea, select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, textarea:focus, select:focus {
+    transform: scale(1.01);
+}
+
+/* Smooth mobile menu */
+#mobile-menu {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Image Carousel */
+.carousel-container {
+    min-height: 600px;
+    will-change: transform;
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+}
+
+@media (min-width: 1024px) {
+    .carousel-container {
+        min-height: 800px;
+    }
+    .carousel-slides {
+        min-height: 800px;
+    }
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+    backface-visibility: hidden;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-slide img {
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+}
+
+.carousel-dots {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    will-change: transform, background-color;
+}
+
+.carousel-dots span:hover {
+    transform: scale(1.3);
+}
+
+.carousel-dots span.active {
+    background-color: #D4AF37;
+    border-color: #D4AF37;
+    transform: scale(1.2);
+}
+
+.carousel-prev, .carousel-next {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background-color;
+    backdrop-filter: blur(4px);
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Fixed hero section */
+.hero-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+}
+
+.carousel-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+}
