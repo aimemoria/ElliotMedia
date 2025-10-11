@@ -1,4 +1,4 @@
-# Elliot Media - Professional Real Estate Photography
+# Elliot Media - Professional Real Estate Media
 
 [![Website Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![License](https://img.shields.io/badge/license-Private-red.svg)]()
