@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hero stays fixed until services section reaches the viewport
         const fixedScrollZone = servicesPosition - heroHeight - navHeight;
 
-        if (scrollY > navHeight && scrollY < fixedScrollZone) {
+        if (scrollY > 0 && scrollY < fixedScrollZone) {
             // Entering/staying in fixed zone
             if (!isFixed) {
                 heroPlaceholder.style.height = heroHeight + 'px';
