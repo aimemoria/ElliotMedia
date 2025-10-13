@@ -177,11 +177,11 @@
     <section id="home" class="hero-gradient pt-24 pb-16 lg:pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
-                <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
                     Elliot Media
-                    <span class="text-brand-gold block text-2xl lg:text-3xl mt-2">Visuals that Sell. Stories that Stay.</span>
+                    <span class="text-brand-gold block text-2xl lg:text-2xl mt-2">Visuals that Sell. Stories that Stay.</span>
                 </h1>
-                <p class="text-lg lg:text-xl mb-8 opacity-90 max-w-4xl mx-auto">
+                <p class="text-lg lg:text-lg mb-8 opacity-90 max-w-3xl mx-auto">
                     We create stunning property visuals through photography, drone shots, 3D tours, floor plans, and cinematic videos designed to make every space stand out and connect with buyers.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -598,6 +598,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lightbox for image preview -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="Preview">
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
