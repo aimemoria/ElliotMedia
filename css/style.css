@@ -30,6 +30,32 @@ section {
                 opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Keep hero section compact when fixed during scroll */
+#home.hero-scrolled {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+#home.hero-scrolled h1 {
+    margin-bottom: 0.5rem !important;
+    font-size: 1.75rem !important;
+}
+
+#home.hero-scrolled h1 span {
+    font-size: 1rem !important;
+    margin-top: 0.25rem !important;
+}
+
+#home.hero-scrolled p {
+    margin-bottom: 0.75rem !important;
+    font-size: 0.85rem !important;
+}
+
+#home.hero-scrolled .btn-primary,
+#home.hero-scrolled .btn-outline {
+    padding: 0.5rem 1.25rem !important;
+    font-size: 0.85rem !important;
+}
 
 /* Smooth navigation */
 nav {
