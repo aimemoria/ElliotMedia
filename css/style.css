@@ -375,16 +375,22 @@ input:focus, textarea:focus, select:focus {
 /* Make hero section content smaller on desktop only */
 @media (min-width: 1024px) {
     #home h1 {
-        font-size: 3.5rem !important;
+        font-size: 2.5rem !important;
     }
 
     #home h1 span {
-        font-size: 1.875rem !important;
+        font-size: 1.25rem !important;
     }
 
     #home p {
-        font-size: 1.125rem !important;
+        font-size: 0.95rem !important;
         max-width: 48rem !important;
+    }
+
+    #home .btn-primary,
+    #home .btn-outline {
+        font-size: 0.95rem !important;
+        padding: 0.65rem 1.5rem !important;
     }
 }
 
