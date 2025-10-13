@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
             heroSection.style.width = 'auto';
             heroSection.style.zIndex = 'auto';
             heroSection.style.transform = 'none';
-            heroSection.classList.remove('hero-scrolled');
             isFixed = false;
             ticking = false;
             return;
@@ -163,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 heroSection.style.width = '100%';
                 heroSection.style.zIndex = '40';
                 heroSection.style.transform = 'translateY(0)';
-                heroSection.classList.add('hero-scrolled');
 
                 isFixed = true;
             }
@@ -175,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 heroSection.style.position = 'absolute';
                 heroSection.style.top = (fixedScrollZone + navHeight) + 'px';
                 heroSection.style.transform = 'translateY(0)';
-                heroSection.classList.remove('hero-scrolled');
                 isFixed = false;
             } else {
                 heroSection.style.position = 'absolute';
@@ -193,7 +190,6 @@ document.addEventListener('DOMContentLoaded', function() {
             heroSection.style.width = 'auto';
             heroSection.style.zIndex = 'auto';
             heroSection.style.transform = 'none';
-            heroSection.classList.remove('hero-scrolled');
 
             isFixed = false;
         }
