@@ -3,10 +3,49 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle('hidden');
 }
 
+// Lightbox functions
+function openLightbox(imageSrc, imageAlt) {
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImage');
+    modal.classList.add('active');
+    modalImg.src = imageSrc;
+    modalImg.alt = imageAlt;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
 // Portfolio filter functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Add click event listeners to portfolio images
+    const portfolioImages = document.querySelectorAll('.portfolio-item img');
+    portfolioImages.forEach(img => {
+        img.addEventListener('click', function() {
+            openLightbox(this.src, this.alt);
+        });
+    });
+
+    // Close lightbox when clicking outside image
+    const modal = document.getElementById('lightboxModal');
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeLightbox();
+        }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
 
     // Image Carousel
     const slides = document.querySelectorAll('.carousel-slide');
