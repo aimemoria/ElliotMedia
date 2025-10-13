@@ -399,25 +399,33 @@ input:focus, textarea:focus, select:focus {
     cursor: pointer;
 }
 
-/* Make hero section content smaller on desktop only */
+/* Make hero section content same size for both initial and scrolled states on desktop */
 @media (min-width: 1024px) {
+    #home {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
     #home h1 {
-        font-size: 2.5rem !important;
+        margin-bottom: 0.5rem !important;
+        font-size: 1.75rem !important;
     }
 
     #home h1 span {
-        font-size: 1.25rem !important;
+        font-size: 1rem !important;
+        margin-top: 0.25rem !important;
     }
 
     #home p {
-        font-size: 0.95rem !important;
+        margin-bottom: 0.75rem !important;
+        font-size: 0.85rem !important;
         max-width: 48rem !important;
     }
 
     #home .btn-primary,
     #home .btn-outline {
-        font-size: 0.95rem !important;
-        padding: 0.65rem 1.5rem !important;
+        padding: 0.5rem 1.25rem !important;
+        font-size: 0.85rem !important;
     }
 }
 
