@@ -406,6 +406,29 @@ input:focus, textarea:focus, select:focus {
     cursor: pointer;
 }
 
+/* Mobile-friendly lightbox adjustments */
+@media (max-width: 768px) {
+    .lightbox-image-container {
+        max-width: 95%;
+        max-height: 90vh;
+        padding: 8px;
+        margin: 10px;
+    }
+
+    .lightbox-image-container img {
+        max-height: calc(90vh - 16px);
+        border-radius: 4px;
+    }
+
+    .lightbox-close-btn {
+        top: 5px;
+        right: 5px;
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+}
+
 /* Make hero section content same size for both initial and scrolled states on desktop */
 @media (min-width: 1024px) {
     #home {
