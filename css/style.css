@@ -184,6 +184,13 @@ a, button {
 img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    background-color: #f3f4f6;
+}
+
+/* Image loading optimization */
+.carousel-slide img,
+.portfolio-item img {
+    content-visibility: auto;
 }
 
 /* Portfolio filter buttons */

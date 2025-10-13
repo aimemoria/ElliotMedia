@@ -55,6 +55,20 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     let autoplayInterval;
 
+    // Preload adjacent images for smoother transitions
+    function preloadAdjacentImages(index) {
+        const nextIndex = (index + 1) % slides.length;
+        const prevIndex = (index - 1 + slides.length) % slides.length;
+
+        [nextIndex, prevIndex].forEach(i => {
+            const img = slides[i].querySelector('img');
+            if (img && !img.complete) {
+                const preloadImg = new Image();
+                preloadImg.src = img.src;
+            }
+        });
+    }
+
     // Create dots
     slides.forEach((_, index) => {
         const dot = document.createElement('span');
@@ -71,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSlide = (n + slides.length) % slides.length;
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
+
+        // Preload adjacent images when changing slides
+        preloadAdjacentImages(currentSlide);
     }
 
     function nextSlide() {
@@ -105,6 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start autoplay
     startAutoplay();
+
+    // Preload first set of adjacent images on page load
+    preloadAdjacentImages(0);
 
     // Smooth fixed hero section on scroll (Desktop only)
     const heroSection = document.getElementById('home');
