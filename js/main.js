@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start autoplay
     startAutoplay();
 
-    // Smooth fixed hero section on scroll
+    // Smooth fixed hero section on scroll (Desktop only)
     const heroSection = document.getElementById('home');
     const carouselSection = document.querySelector('.carousel-container').parentElement.parentElement;
     const servicesSection = document.getElementById('services');
@@ -122,6 +122,22 @@ document.addEventListener('DOMContentLoaded', function() {
     heroSection.parentNode.insertBefore(heroPlaceholder, heroSection);
 
     function smoothScroll() {
+        // Only apply fixed behavior on desktop (screens wider than 768px)
+        if (window.innerWidth <= 768) {
+            // Reset to normal flow on mobile
+            heroPlaceholder.style.display = 'none';
+            heroSection.style.position = 'static';
+            heroSection.style.top = 'auto';
+            heroSection.style.left = 'auto';
+            heroSection.style.right = 'auto';
+            heroSection.style.width = 'auto';
+            heroSection.style.zIndex = 'auto';
+            heroSection.style.transform = 'none';
+            isFixed = false;
+            ticking = false;
+            return;
+        }
+
         const scrollY = window.scrollY;
         const scrollDirection = scrollY > lastScrollY ? 'down' : 'up';
         const navHeight = nav.offsetHeight;
