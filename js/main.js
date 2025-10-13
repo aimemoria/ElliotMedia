@@ -3,49 +3,10 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle('hidden');
 }
 
-// Lightbox functionality for portfolio images
-function openLightbox(imageSrc, imageAlt) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = imageSrc;
-    lightboxImg.alt = imageAlt;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-// Close lightbox when clicking outside the image
-document.addEventListener('DOMContentLoaded', function() {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox) {
-        lightbox.addEventListener('click', closeLightbox);
-    }
-
-    // Close lightbox on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeLightbox();
-        }
-    });
-});
-
 // Portfolio filter functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Add click event to all portfolio images
-    const portfolioItems = document.querySelectorAll('.portfolio-item img');
-    portfolioItems.forEach(img => {
-        img.addEventListener('click', function() {
-            openLightbox(this.src, this.alt);
-        });
-    });
 
     // Image Carousel
     const slides = document.querySelectorAll('.carousel-slide');
