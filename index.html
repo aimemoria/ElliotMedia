@@ -119,6 +119,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Preload critical carousel images -->
+    <link rel="preload" as="image" href="images/Gameroom.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="images/LivingRoom Officcial.jpg">
 </head>
 
 <body class="font-poppins text-custom-dark bg-white">
@@ -202,10 +206,10 @@
             <div class="carousel-container relative overflow-hidden">
                 <div class="carousel-slides">
                     <div class="carousel-slide active">
-                        <img src="images/Gameroom.jpg" alt="Game Room" class="w-full h-[600px] lg:h-[800px] object-cover">
+                        <img src="images/Gameroom.jpg" alt="Game Room" fetchpriority="high" class="w-full h-[600px] lg:h-[800px] object-cover">
                     </div>
                     <div class="carousel-slide">
-                        <img src="images/LivingRoom Officcial.jpg" alt="Living Room" loading="lazy" class="w-full h-[600px] lg:h-[800px] object-cover">
+                        <img src="images/LivingRoom Officcial.jpg" alt="Living Room" fetchpriority="high" class="w-full h-[600px] lg:h-[800px] object-cover">
                     </div>
                     <div class="carousel-slide">
                         <img src="images/Kitchen angle photo.jpg" alt="Kitchen" loading="lazy" class="w-full h-[600px] lg:h-[800px] object-cover">
