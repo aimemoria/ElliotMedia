@@ -402,8 +402,12 @@ input:focus, textarea:focus, select:focus {
 /* Make hero section content same size for both initial and scrolled states on desktop */
 @media (min-width: 1024px) {
     #home {
-        padding-top: 1.5rem !important;
         padding-bottom: 1.5rem !important;
+    }
+
+    #home > div {
+        padding-top: 1.5rem !important;
+        padding-bottom: 0 !important;
     }
 
     #home h1 {
