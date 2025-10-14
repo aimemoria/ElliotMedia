@@ -3,6 +3,11 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle('hidden');
 }
 
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.add('hidden');
+}
+
 // Lightbox functions
 function openLightbox(imageSrc, imageAlt) {
     const modal = document.getElementById('lightboxModal');
@@ -23,6 +28,28 @@ function closeLightbox() {
 document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile menu functionality
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.querySelector('[onclick="toggleMobileMenu()"]');
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+    // Close mobile menu when clicking a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMobileMenu();
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = mobileMenu.contains(event.target);
+        const isClickOnButton = mobileMenuButton.contains(event.target);
+
+        if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+            closeMobileMenu();
+        }
+    });
 
     // Add click event listeners to portfolio images
     const portfolioImages = document.querySelectorAll('.portfolio-item img');
@@ -135,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollY = 0;
     let ticking = false;
     let isFixed = false;
+    let lastScrollForNav = 0;
 
     // Create placeholder to maintain layout
     const heroPlaceholder = document.createElement('div');
@@ -142,8 +170,23 @@ document.addEventListener('DOMContentLoaded', function() {
     heroSection.parentNode.insertBefore(heroPlaceholder, heroSection);
 
     function smoothScroll() {
-        // Only apply fixed behavior on desktop (screens wider than 768px)
+        const scrollY = window.scrollY;
+
+        // Mobile header hide/show on scroll
         if (window.innerWidth <= 768) {
+            const scrollThreshold = 10; // Minimum scroll distance to trigger
+
+            if (Math.abs(scrollY - lastScrollForNav) > scrollThreshold) {
+                if (scrollY > lastScrollForNav && scrollY > 80) {
+                    // Scrolling down - hide navbar
+                    nav.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up - show navbar
+                    nav.style.transform = 'translateY(0)';
+                }
+                lastScrollForNav = scrollY;
+            }
+
             // Reset to normal flow on mobile
             heroPlaceholder.style.display = 'none';
             heroSection.style.position = 'static';
@@ -159,7 +202,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const scrollY = window.scrollY;
+        // Reset navbar transform on desktop
+        nav.style.transform = 'translateY(0)';
+        lastScrollForNav = scrollY;
+
         const scrollDirection = scrollY > lastScrollY ? 'down' : 'up';
         const navHeight = nav.offsetHeight;
         const heroHeight = heroSection.offsetHeight;
