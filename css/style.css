@@ -463,10 +463,17 @@ input:focus, textarea:focus, select:focus {
     }
 }
 
-/* Remove fixed navigation on mobile only */
+/* Mobile navigation with hide/show on scroll */
 @media (max-width: 768px) {
     nav {
-        position: relative !important;
+        position: fixed !important;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
     }
 
     /* Reduce hero section height to 1/3 on mobile */
