@@ -30,33 +30,35 @@ section {
                 opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Keep hero section same size when scrolled - increased padding */
-#home.hero-scrolled {
-    padding-top: 8rem !important;
-    padding-bottom: 2rem !important;
-}
+/* Keep hero section same size when scrolled - desktop/tablet only */
+@media (min-width: 768px) {
+    #home.hero-scrolled {
+        padding-top: 1.0180485rem !important;
+        padding-bottom: 3.817044rem !important;
+    }
 
-#home.hero-scrolled h1 {
-    margin-bottom: 0.6rem !important;
-    font-size: 2.25rem !important;
-    line-height: 1.2 !important;
-}
+    #home.hero-scrolled h1 {
+        margin-bottom: 1.5rem !important;
+        font-size: 3rem !important;
+        line-height: 1.1 !important;
+    }
 
-#home.hero-scrolled h1 span {
-    font-size: 1.25rem !important;
-    margin-top: 0.35rem !important;
-}
+    #home.hero-scrolled h1 span {
+        font-size: 1.875rem !important;
+        margin-top: 0.5rem !important;
+    }
 
-#home.hero-scrolled p {
-    margin-bottom: 0.9rem !important;
-    font-size: 1.125rem !important;
-    line-height: 1.5 !important;
-}
+    #home.hero-scrolled p {
+        margin-bottom: 2rem !important;
+        font-size: 1.25rem !important;
+        line-height: 1.6 !important;
+    }
 
-#home.hero-scrolled .btn-primary,
-#home.hero-scrolled .btn-outline {
-    padding: 0.65rem 1.25rem !important;
-    font-size: 1rem !important;
+    #home.hero-scrolled .btn-primary,
+    #home.hero-scrolled .btn-outline {
+        padding: 1rem 2rem !important;
+        font-size: 1.125rem !important;
+    }
 }
 
 /* Smooth navigation */
@@ -431,11 +433,11 @@ input:focus, textarea:focus, select:focus {
     }
 }
 
-/* Desktop hero section - increased padding */
-@media (min-width: 1024px) {
+/* Tablet hero section (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
     #home {
-        padding-top: 8rem !important;
-        padding-bottom: 2rem !important;
+        padding-top: 6rem !important;
+        padding-bottom: 4rem !important;
     }
 
     #home > div {
@@ -444,27 +446,66 @@ input:focus, textarea:focus, select:focus {
     }
 
     #home h1 {
-        margin-bottom: 0.6rem !important;
-        font-size: 2.25rem !important;
-        line-height: 1.2 !important;
+        margin-bottom: 1.5rem !important;
+        font-size: 3rem !important;
+        line-height: 1.1 !important;
     }
 
     #home h1 span {
-        font-size: 1.25rem !important;
-        margin-top: 0.35rem !important;
+        font-size: 1.875rem !important;
+        margin-top: 0.5rem !important;
+        display: block;
     }
 
     #home p {
-        margin-bottom: 0.9rem !important;
-        font-size: 1.125rem !important;
-        line-height: 1.5 !important;
+        margin-bottom: 2rem !important;
+        font-size: 1.25rem !important;
+        line-height: 1.6 !important;
         max-width: 48rem !important;
     }
 
     #home .btn-primary,
     #home .btn-outline {
-        padding: 0.65rem 1.25rem !important;
-        font-size: 1rem !important;
+        padding: 1rem 2rem !important;
+        font-size: 1.125rem !important;
+    }
+}
+
+/* Desktop hero section (1024px and above) */
+@media (min-width: 1024px) {
+    #home {
+        padding-top: 6rem !important;
+        padding-bottom: 4rem !important;
+    }
+
+    #home > div {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    #home h1 {
+        margin-bottom: 1.5rem !important;
+        font-size: 3rem !important;
+        line-height: 1.1 !important;
+    }
+
+    #home h1 span {
+        font-size: 1.875rem !important;
+        margin-top: 0.5rem !important;
+        display: block;
+    }
+
+    #home p {
+        margin-bottom: 2rem !important;
+        font-size: 1.25rem !important;
+        line-height: 1.6 !important;
+        max-width: 48rem !important;
+    }
+
+    #home .btn-primary,
+    #home .btn-outline {
+        padding: 1rem 2rem !important;
+        font-size: 1.125rem !important;
     }
 }
 
