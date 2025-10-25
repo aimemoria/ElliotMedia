@@ -320,6 +320,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Lazy load iframes to prevent memory issues
+document.addEventListener('DOMContentLoaded', function() {
+    const lazyIframes = document.querySelectorAll('iframe.lazy-iframe');
+
+    // Only load iframes when they become visible or when their filter is clicked
+    const iframeObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target;
+                if (iframe.dataset.src) {
+                    iframe.src = iframe.dataset.src;
+                    iframe.removeAttribute('data-src');
+                    observer.unobserve(iframe);
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px' // Start loading 50px before the iframe becomes visible
+    });
+
+    lazyIframes.forEach(iframe => {
+        iframeObserver.observe(iframe);
+    });
+
+    // Also load iframes when their portfolio filter is clicked
+    const filterButtons = document.querySelectorAll('.portfolio-filter');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+
+            // Small delay to allow filter animation to complete
+            setTimeout(() => {
+                const visibleItems = document.querySelectorAll(`.portfolio-item.${filter}, .portfolio-item`);
+                visibleItems.forEach(item => {
+                    if (item.style.display !== 'none') {
+                        const iframe = item.querySelector('iframe.lazy-iframe[data-src]');
+                        if (iframe) {
+                            iframe.src = iframe.dataset.src;
+                            iframe.removeAttribute('data-src');
+                        }
+                    }
+                });
+            }, 100);
+        });
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

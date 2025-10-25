@@ -207,6 +207,12 @@ img {
     transform: translateY(-2px);
 }
 
+/* YouTube embed responsive container */
+.portfolio-item iframe {
+    border-radius: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Form inputs */
 input, textarea, select {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
