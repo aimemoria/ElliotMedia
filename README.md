@@ -21,7 +21,7 @@ Elliot Media is a professional real estate photography and media service company
 - **Real Estate Photography** - Professional interior and exterior property photography
 - **Aerial Drone Services** - Stunning aerial views and property overviews
 - **Videography** - Cinematic property tour videos
-- **3D Virtual Tours** - Immersive 360° virtual property experiences
+- **3D Virtual Tours** - Immersive 360 degree virtual property experiences
 - **Floor Plans** - Professional architectural floor plans
 - **Twilight Photography** - Dramatic dusk and twilight property shots
 
@@ -29,39 +29,39 @@ Elliot Media is a professional real estate photography and media service company
 
 ```
 elliot-website/
-├── index.html              # Main website file
-├── css/
-│   └── style.css          # Custom styles and animations
-├── js/
-│   └── main.js            # Interactive features and form handling
-├── images/                # All website images and assets
-│   ├── favicon*.png       # Favicon files (multiple sizes)
-│   ├── elliotmedialogo.png
-│   └── [property photos]
-└── README.md              # Project documentation
+   index.html              # Main website file
+   css/
+      style.css            # Custom styles and animations
+   js/
+      main.js              # Interactive features and form handling
+   images/                # All website images and assets
+      favicon*.png         # Favicon files (multiple sizes)
+      elliotmedialogo.png
+      [property photos]
+   README.md              # Project documentation
 ```
 
 ## Features
 
 ### Website Features
-- ✅ Fully responsive design (mobile, tablet, desktop)
-- ✅ Modern carousel/slider for property showcase
-- ✅ Portfolio filtering system (Photos, Drone, Video, 3D Tours, etc.)
-- ✅ Contact form with Web3Forms integration
-- ✅ Smooth scrolling navigation
-- ✅ Fixed navigation bar
-- ✅ Social media integration (Instagram, YouTube, LinkedIn)
-- ✅ Mobile-friendly menu
+- Fully responsive design (mobile, tablet, desktop)
+- Modern carousel/slider for property showcase
+- Portfolio filtering system (Photos, Drone, Video, 3D Tours, etc.)
+- Contact form with Web3Forms integration
+- Smooth scrolling navigation
+- Fixed navigation bar
+- Social media integration (Instagram, YouTube, LinkedIn)
+- Mobile-friendly menu
 
 ### SEO Optimization
-- ✅ Comprehensive meta tags
-- ✅ Open Graph tags for social media sharing
-- ✅ Twitter Card integration
-- ✅ Schema.org structured data (JSON-LD)
-- ✅ Optimized images with lazy loading
-- ✅ Semantic HTML5 structure
-- ✅ Favicon implementation (multiple sizes)
-- ✅ Canonical URLs
+- Comprehensive meta tags
+- Open Graph tags for social media sharing
+- Twitter Card integration
+- Schema.org structured data (JSON-LD)
+- Optimized images with lazy loading
+- Semantic HTML5 structure
+- Favicon implementation (multiple sizes)
+- Canonical URLs
 
 ## Technology Stack
 
@@ -115,7 +115,7 @@ git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git push -u origin main
 ```
 
-3. Go to repository Settings → Pages
+3. Go to repository Settings > Pages
 4. Select main branch as source
 5. Save and wait for deployment
 
@@ -159,11 +159,11 @@ Update these URLs if using a different booking system.
 
 ## Browser Support
 
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## Performance Optimization
 
@@ -198,7 +198,7 @@ Update these URLs if using a different booking system.
 
 This project is proprietary software owned by Elliot Media. All rights reserved. Unauthorized copying, distribution, or use of this software is strictly prohibited.
 
-© 2024 Elliot Media. All Rights Reserved.
+(c) 2024 Elliot Media. All Rights Reserved.
 
 ## Contact & Support
 
